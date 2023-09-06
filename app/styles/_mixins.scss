@@ -1,0 +1,58 @@
+@mixin flex($align, $justify) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin fixWidth($width) {
+  min-width: $width;
+  max-width: $width;
+}
+
+@mixin fixHight($height) {
+  min-height: $height;
+  max-height: $height;
+}
+
+@mixin font($weight, $size, $height, $color) {
+  font-style: normal;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $height;
+  color: $color;
+}
+
+@mixin whiteButton($paddingV, $paddingH) {
+  border-radius: 8px;
+  padding-top: $paddingV;
+  padding-bottom: $paddingV;
+  padding-left: $paddingH;
+  padding-right: $paddingH;
+  @include font(400, 18px, 22px, $black);
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: $white;
+}
+
+@mixin defaultButton($paddingV, $paddingH) {
+  border-radius: 8px;
+  padding-top: $paddingV;
+  padding-bottom: $paddingV;
+  padding-left: $paddingH;
+  padding-right: $paddingH;
+  @include font(400, 18px, 22px, $white);
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid $white;
+}
+
+@mixin media-max($max-width: 900px) {
+  @media only screen and (max-width: $max-width) {
+    @content;
+  }
+}
